@@ -44,6 +44,7 @@ int main(int argc, char* argv[]){
     return 0;
   }
   std::string ip = argv[1];
+  std::cout << "Starting scan on host " << ip << "\n";
   long current = currentTimeMillis();
   for (int i = 0; i <= lastPort; i++){
     if (isPortOpen(ip, i)){
@@ -52,6 +53,6 @@ int main(int argc, char* argv[]){
     }
   }
   long elapsedMs = currentTimeMillis() - current;
-  std::cout << "Finished in " << elapsedMs/1000 << "s, " << portCount << " open ports found";
+  std::cout << "Finished in " << elapsedMs/1000 << "s, " << portCount << " open ports found\n";
   return 0;
 }
